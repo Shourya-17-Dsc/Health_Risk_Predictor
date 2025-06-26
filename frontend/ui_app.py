@@ -5,7 +5,7 @@ import requests
 st.set_page_config(page_title="Global Health Risk Predictor", page_icon="🩺", layout="centered")
 
 # API URL - replace with your actual backend URL
-API_URL = "https://health-risk-api-fpmq.onrender.com/predict"
+API_URL = "https://health-risk-predictor-etp3.onrender.com/predict"
 
 st.title("🩺 Global Health Risk Predictor")
 st.markdown("Predict Diabetes and Hypertension risk using recent health metrics. Works across all users worldwide!")
