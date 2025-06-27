@@ -22,7 +22,7 @@ with col1:
 with col2:
     age = st.slider("Age", 18, 100, 30)
     sex = st.selectbox("Sex", ["Male", "Female"])
-     bmi = st.number_input("BMI", 10.0, 50.0, 23.5)
+    bmi = st.number_input("BMI", 10.0, 50.0, 23.5)
         # Replace systolic_bp with bp to match backend
 bp = st.number_input("Blood Pressure (Systolic)", min_value=80.0, max_value=200.0, value=120.0)
 
@@ -95,3 +95,5 @@ if submit:
 # Footer
 st.markdown("---")
 st.caption("🌐 Created by Shourya | Streamlit + Flask | 2025")
+
+   
