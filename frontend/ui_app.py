@@ -14,12 +14,12 @@ with st.form("risk_form"):
     st.subheader("👤 Employee & Demographic Info")
 
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
         blood_group = st.selectbox("Blood Group", ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"])
         year = st.selectbox("Checkup Year", [2021, 2022, 2023, 2024, 2025])
         plant = st.selectbox("Plant", ["NPC", "RAS", "BCP", "GRGM1", "SMP"])
         department = st.selectbox("Department", ["IT", "HR", "Finance", "Operations", "Admin", "Others"])
-    with col2:
+with col2:
         age = st.slider("Age", 18, 100, 30)
         sex = st.selectbox("Sex", ["Male", "Female"])
         bmi = st.number_input("BMI", 10.0, 50.0, 23.5)
@@ -31,17 +31,16 @@ hdl = st.number_input("HDlCholestrol", min_value=10.0, max_value=100.0, value=50
 
 st.subheader("🧪 Lab Test Values")
 col3, col4, col5 = st.columns(3)
-    with col3:
+with col3:
         sugar_r = st.number_input("Random Blood Sugar", 50.0, 400.0, 110.0)
-    with col4:
+with col4:
         chol = st.number_input("Cholesterol", 100.0, 400.0, 180.0)
-    with col5:
+ with col5:
         tg = st.number_input("Triglycerides", 50.0, 400.0, 150.0)
-
-    col6, col7 = st.columns(2)
-    with col6:
+        col6, col7 = st.columns(2)
+with col6:
         ldl = st.number_input("LDL", 10.0, 200.0, 100.0)
-    with col7:
+ with col7:
         vldl = st.number_input("VLDL", 5.0, 100.0, 30.0)
 
     submit = st.form_submit_button("🔍 Predict Now")
