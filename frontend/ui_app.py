@@ -23,8 +23,11 @@ with st.form("risk_form"):
         age = st.slider("Age", 18, 100, 30)
         sex = st.selectbox("Sex", ["Male", "Female"])
         bmi = st.number_input("BMI", 10.0, 50.0, 23.5)
-        systolic_bp = st.number_input("Systolic BP", 80.0, 200.0, 120.0)
-        diastolic_bp = st.number_input("Diastolic BP", 50.0, 130.0, 80.0)
+        # Replace systolic_bp with bp to match backend
+bp = st.number_input("Blood Pressure (Systolic)", min_value=80.0, max_value=200.0, value=120.0)
+
+# HDL input (be careful with spelling)
+hdl = st.number_input("HDlCholestrol", min_value=10.0, max_value=100.0, value=50.0)
 
     st.subheader("🧪 Lab Test Values")
     col3, col4, col5 = st.columns(3)
@@ -47,22 +50,25 @@ with st.form("risk_form"):
 if submit:
     st.info("⏳ Sending data to backend...")
 
-    payload = {
-        "blood_group": blood_group,
-        "year": year,
-        "plant": plant,
-        "department": department,
-        "age": age,
-        "sex": sex,
-        "bmi": bmi,
-        "systolic_bp": systolic_bp,
-        "diastolic_bp": diastolic_bp,
-        "sugar_r": sugar_r,
-        "chol": chol,
-        "tg": tg,
-        "LDL": ldl,
-        "VLDL": vldl
-    }
+    
+     payload = {
+    "blood_group": blood_group,
+    "year": year,
+    "plant": plant,
+    "department": department,
+    "age": age,
+    "sex": sex,
+    "bmi": bmi,
+    "bp": bp,                        
+    "sugar_r": sugar_r,
+    "chol": chol,
+    "tg": tg,
+    "LDL": ldl,
+    "VLDL": vldl,
+    "HDlCholestrol": hdl            
+}
+
+    
 
     try:
         res = requests.post(API_URL, json=payload)
