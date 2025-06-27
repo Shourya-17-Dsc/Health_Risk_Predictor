@@ -30,7 +30,7 @@ bp = st.number_input("Blood Pressure (Systolic)", min_value=80.0, max_value=200.
 hdl = st.number_input("HDlCholestrol", min_value=10.0, max_value=100.0, value=50.0)
 
 st.subheader("🧪 Lab Test Values")
-    col3, col4, col5 = st.columns(3)
+col3, col4, col5 = st.columns(3)
     with col3:
         sugar_r = st.number_input("Random Blood Sugar", 50.0, 400.0, 110.0)
     with col4:
